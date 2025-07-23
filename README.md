@@ -1,2 +1,3 @@
-# learning-linux-command-line
-Repository for Learning Linux Command Line on LinkedIn Learning
+# Learning Linux Command Line
+
+This repository contains files for my course, [Learning Linux Command Line](), which is available on LinkedIn Learning.
