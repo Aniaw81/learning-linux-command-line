@@ -1,4 +1,6 @@
-# Commands used in __Learning Linux Command Line__ from LinkedIn Learning
+# Commands
+
+These are the commands used in _Learning Linux Command Line_ from LinkedIn Learning.
 
 ## 02_03 - Write commands in a shell at the prompt
 
@@ -10,7 +12,7 @@
 
 `list` (invalid command)
 
-`jhsdgjhksad` (invalid command)
+`sjhfgasjk` (invalid command)
 
 ## 02_04 - Finding help for commands
 
@@ -32,25 +34,15 @@
 
 `clear` (used throughout the course)
 
-## 03_01 - The Linux file system
-
-`ls -l`
-
-`file Documents`
-
-`stat Documents`
-
 ## 03_03 - Navigating the file system
 
-`cd Documents/`
+`cd ~/Documents/`
 
 `pwd`
 
-`cd Exercise Files` (invalid command)
+`ls`
 
-`cd Exercise\ Files`
-
-`pwd`
+`cd ExerciseFiles`
 
 `ls`
 
@@ -68,23 +60,29 @@
 
 `cd -`
 
+`cd -`
+
 `cd`
 
-## 03_04 - Exploring the output of the ls command
+## 03_04 - Finding directory and file information
 
 `ls`
 
 `ls --color=always`
 
-`cd Documents/Exercise\ Files`
+`cd Documents/ExerciseFiles`
 
 `ls -l`
 
 `ls -lh`
 
+`file poems.txt`
+
+`stat poems.txt`
+
 ## 03_05 - Create and remove directories
 
-`mkdir newfolder`
+`mkdir newdir`
 
 `ls -l`
 
@@ -96,9 +94,7 @@
 
 `rmdir departments/legal/contracts/`
 
-`rmdir departments/legal/`
-
-`rmdir departments/customerservice`
+`rmdir departments/customerservice/`
 
 ## 03_06 - Copy, move, and delete files and directories
 
@@ -108,7 +104,7 @@
 
 `cp simple_data.txt departments/hr/employee\ info/`
 
-`ls departments/hr/employee\ info/`
+`ls -lh departments/hr/employee\ info/`
 
 `mv poems2.txt departments/marketing`
 
@@ -121,8 +117,6 @@
 `ls departments/marketing/`
 
 `mv departments/marketing/literature.txt .`
-
-`ls`
 
 `ls`
 
@@ -156,11 +150,9 @@
 
 `find . -name "poe*"`
 
-`find . -name "do*"`
-
-`find . -name "d*"`
-
 `find . -name "*d*"`
+
+`find . -iname "*d*"`
 
 `find ~/Documents -name "*d*"`
 
@@ -174,9 +166,9 @@
 
 `sudo -k`
 
-`sudo ls /root`
+`sudo -i`
 
-`sudo -s`
+`pwd`
 
 `exit`
 
@@ -184,15 +176,19 @@
 
 `ls`
 
-`./test.sh`
+`bash test.sh`
+
+`ls -l test.sh`
+
+`chmod +x test.sh`
 
 `ls -l test.sh`
 
 `stat test.sh`
 
-`chmod 644 test.sh` followed by Ctrl+C
+`./test.sh`
 
-`chmod -x test.sh`
+`chmod 644 test.sh`
 
 `./test.sh`
 
@@ -202,21 +198,19 @@
 
 `chmod u-r test.sh`
 
-`chmod 244 test.sh` followed by Ctrl+C
-
 `cat test.sh`
 
 `chmod 755 test.sh`
 
-`./test.sh`
-
 `cat test.sh`
+
+`./test.sh`
 
 `touch newfile`
 
-`stat newfile`
-
 `ls -l`
+
+`ls -l test.sh`
 
 `nano test.sh`
 
@@ -227,6 +221,8 @@
 `ls -l test.sh`
 
 `sudo chown [username] test.sh` (replace `[username]` with your user name)
+
+`ls -l test.sh`
 
 ## 03_11 - Create hard and symbolic links
 
@@ -242,11 +238,11 @@
 
 ## 04_02 - Use pipes to connect commands together
 
-`echo "Hello"`
+`echo "hello"`
 
-`echo "Hello" | wc`
+`echo "hello" | wc`
 
-`echo "Hello world from the command line" | wc`
+`echo "hello world from the command line" | wc`
 
 ## 04_03 - View text files with cat, head, tail, and less
 
@@ -254,13 +250,15 @@
 
 `head poems.txt`
 
+`tail poems.txt`
+
 `head -n5 poems.txt`
 
 `tail -n3 poems.txt`
 
-`cat poems.txt | cat -n | tail -n5`
+`cat -n poems.txt | tail -n5`
 
-`cat poems.txt | tail -n5 | cat -n`
+`tail -n5 poems.txt | cat -n`
 
 `less poems.txt`
 
@@ -274,9 +272,13 @@
 
 `grep -n "The" poems.txt`
 
-`grep -in "The" poems.txt`
+`grep -i "The" poems.txt`
 
-`grep -vi "the" poems.txt``grep -E "\w{6.}" poems.txt`
+`grep -vi "the" poems.txt`
+
+`grep -E "[hijk]" poems.txt`
+
+`grep -E "\w{6,}" poems.txt`
 
 ## 04_05 - Manipulate text with awk, sed, and sort
 
@@ -284,15 +286,19 @@
 
 `awk '{print $2}' simple_data.txt`
 
-`awk '{print $2 "\t" $1}' simple_data.txt`
+`awk '{print $2"\t"$1}' simple_data.txt`
 
-`awk '{print $2 "\t" $1}' simple_data.txt | sort -n`
+`awk '{print $2"\t"$1}' simple_data.txt | sort -n`
+
+`cat simple_data.txt`
+
+`sed s/Orange/Red/g simple_data.txt`
 
 `cat simple_data.txt`
 
 `sort simple_data.txt`
 
-`sort -k2 simple_data.txt`
+`sort -k2 -n simple_data.txt`
 
 `cat dupes.txt`
 
@@ -314,13 +320,13 @@
 
 `cd ..`
 
-`tar -cvf myfiles.tar Exercise\ Files/`
+`tar -cvf myfiles.tar ExerciseFiles/`
 
 `ls -l`
 
-`tar -caf myfiles.tar.gz Exercise\ Files/`
+`tar -caf myfiles.tar.gz ExerciseFiles/`
 
-`tar -caf myfiles.tar.bz2 Exercise\ Files/`
+`tar -caf myfiles.tar.bz2 ExerciseFiles/`
 
 `ls -lh`
 
@@ -332,19 +338,13 @@
 
 `tar -xf myfiles.tar.bz2`
 
-`ls -l`
+`ls -lh`
 
-`cd Exercise\ Files`
-
-`ls`
-
-`cd ~/Documents/`
+`cd ..`
 
 `mkdir unpack2`
 
 `tar -xf myfiles.tar.gz -C unpack2`
-
-`ls unpack2`
 
 `zip -r exfiles.zip Exercise\ Files/`
 
@@ -358,19 +358,15 @@
 
 `unzip exfiles.zip`
 
-`ls -l`
+`ls -lh`
 
-`cd ..`
+`mkdir ../unpack4`
 
-`mkdir unpack4`
+`unzip exfiles.zip -d ../unpack4`
 
-`unzip unpack3/exfiles.zip -d unpack4`
-
-`ls -l unpack4`
+`ls -lh ../unpack4`
 
 ## 04_11 - Output redirection
-
-`cd Exercise\ Files`
 
 `ls`
 
@@ -386,7 +382,7 @@
 
 `ls notreal > filelist3.txt`
 
-`ls notreal 2> filelist4.txt`
+`ls notreal 2>filelist4.txt`
 
 `cat filelist4.txt`
 
@@ -410,7 +406,9 @@
 
 `which less`
 
-`ls -a`
+`echo $PATH`
+
+`ls -lah`
 
 `nano ~/.bash_profile`
 
@@ -418,23 +416,17 @@
 
 `ls -l /etc/*release`
 
-`cat /etc/lsb-release`
-
-`cat /etc/os-release`
-
 `cat /etc/*release`
 
 `uname -a`
-
-`uname -r`
 
 ## 05_02 - Find system hardware and disk information
 
 `free -h`
 
-`cat /proc/cpuinfo`
-
 `lscpu`
+
+`cat /proc/cpuinfo`
 
 `df -h`
 
@@ -452,11 +444,9 @@
 
 `tree`
 
-`sudo apt update`
-
 `sudo apt install tree`
 
-`tree`
+`tree Documents/ExerciseFiles`
 
 `man tree`
 
