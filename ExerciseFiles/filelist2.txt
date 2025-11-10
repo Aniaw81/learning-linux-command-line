@@ -1,0 +1,14 @@
+commands.md
+departments
+dupes.txt
+filelist.txt
+filelist2.txt
+log.tar.gz
+new.txt
+new2.txt
+newfile
+poems.txt
+simple_data.txt
+test.sh
+words.txt
+writing.txt
